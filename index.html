@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influx Utsav - Creators Meetup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@500&family=Smythe:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* About Section Styling */
+.about-section {
+    padding: 40px 20px; /* Reduced padding */
+    background-color: black;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Reduced gap */
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px; /* Reduced image size */
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 32px; /* Slightly smaller title */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f7eb59;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+.about-description {
+    font-size: 16px; /* Reduced font size */
+    font-weight: 500;
+    line-height: 1.6; /* Adjusted line height */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-title {
+        font-size: 28px; /* Reduced font size for smaller screens */
+    }
+
+    .about-description {
+        font-size: 14px; /* Reduced font size */
+    }
+}
+
+/* Our Goal Section Styling */
+.our-goal-section {
+    padding: 40px 20px; /* Reduced padding */
+    background-color: black;
+    text-align: center;
+}
+
+.our-goal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.our-goal-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Reduced gap */
+}
+
+.our-goal-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.our-goal-image img {
+    width: 100%;
+    max-width: 400px; /* Reduced image size */
+    height: auto;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 32px; /* Slightly smaller title */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f7eb59;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+.goal-description {
+    font-size: 16px; /* Reduced font size */
+    font-weight: 500;
+    line-height: 1.6; /* Adjusted line height */
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .our-goal-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .our-goal-image img {
+        max-width: 100%;
+        margin-bottom: 15px; /* Reduced margin */
+    }
+
+    .section-title {
+        font-size: 28px; /* Reduced font size for smaller screens */
+    }
+
+    .goal-description {
+        font-size: 14px; /* Reduced font size */
+    }
+}
+
+/* Event Highlights Section */
+.event-highlights-section {
+    background-image: url('assets/img/bg2.jpg'); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    color: white; /* Adjust text color as needed */
+}
+
+.event-highlights-section {
+    position: relative; /* Needed to position the overlay correctly */
+    padding: 50px 0;
+    color: white; /* Adjust text color as needed */
+}
+
+.event-highlights-section::before {
+    content: ''; /* Ensures the pseudo-element is rendered */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    z-index: 1; /* Places the overlay below the content */
+}
+
+.event-highlights-section .event-highlights-container {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2; /* Brings the content above the overlay */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.event-highlights-section {
+    background-image: url('assets/img/bg2.jpg'); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.highlight-list ul li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.highlight-list ul li strong {
+    font-weight: bold;
+}
+
+/* Join Meetup Section */
+.join-meetup-section {
+    background-color: black;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.join-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #f7eb59;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.join-description {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.join-action {
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.register-now-btn {
+    background-color: #f7eb59;
+    color: #333;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.register-now-btn:hover {
+    background-color: #d9c43b;
+}
+
+.contact-info {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Design credit link */
+.design-credit {
+    font-size: 14px;
+    color: #d3d3d3; /* Light color for the text */
+    margin-top: 20px;
+}
+
+.design-credit a {
+    text-decoration: none;
+    color: grey; /* Highlight color for the link */
+    font-weight: 600;
+}
+
+.design-credit a:hover {
+    color: grey; /* Hover effect color */
+}
+
+/* Responsive Design for the sections */
+@media (max-width: 768px) {
+    .join-title {
+        font-size: 28px; /* Reduced font size */
+    }
+
+    .join-description {
+        font-size: 16px; /* Reduced font size */
+    }
+
+    .join-action {
+        font-size: 18px; /* Reduced font size */
+    }
+
+    .register-now-btn {
+        font-size: 16px; /* Reduced button font size */
+    }
+
+    .section-title {
+        font-size: 24px; /* Adjusted for smaller screens */
+    }
+
+    .highlight-list ul li {
+        font-size: 1rem; /* Reduced font size for better readability */
+    }
+}
+
+    </style>
+</head>
+<body>
+   <!-- Hero Section -->
+<section class="hero-section">
+    <img src="assets/img/Untitled (100 x 50 px).png" alt="Influx Utsav Logo" class="hero-logo">
+    <div class="hero-content">
+        <h1 class="hero-main-heading">Mangalore’s Biggest and First Ever Influencer's Meetup</h1>
+        <p class="hero-tagline">Powered by <a href="https://www.instagram.com/mangalore.story" target="_blank" rel="noopener noreferrer">@mangalore.story</a></p>
+</div>
+  <!-- Countdown Section -->
+  <div class="countdown-container">
+
+    <div id="countdown">
+        <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+        </ul>
+        <h1 id="headline">Secure your Spots NOW - Limited slots available!!!</h1>
+    </div>
+    
+</div>
+    <!-- Register Now Button -->
+    <a href="https://forms.gle/KvcuhvG1EGitt7u98" class="hero-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="about-container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="assets/img/logo.png" alt="Event Image">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">About The Event</h2>
+                <p class="about-description">
+                    We are bringing together Mangalore’s top influencers, creators, and digital entrepreneurs for the biggest and first-ever influencer meetup in the city! Our mission is to build a thriving creator community, foster collaborations, and provide opportunities for influencers to grow and expand their reach. Whether you're a content creator or a digital entrepreneur, this is the perfect opportunity to network, collaborate, and elevate your presence in the digital world.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Our Goal Section -->
+<section id="our-goal" class="our-goal-section">
+    <div class="our-goal-container">
+        <div class="our-goal-content">
+            <div class="our-goal-text">
+                <h2 class="section-title">What is Our Goal</h2>
+                <p class="goal-description">
+                    Our goal is to build a strong and vibrant influencer community in Mangalore, where creators, brands, and businesses can connect, collaborate, and grow together. We aim to empower digital creators by providing a platform for learning, networking, and unlocking new opportunities. This event is designed to celebrate Mangalore’s digital talent, foster meaningful partnerships, and open doors to exciting collaborations. By bringing influencers together, we strive to create a space where creativity thrives, ideas flourish, and success stories begin.
+                </p>
+            </div>
+            <div class="our-goal-image">
+                <img src="assets/img/Screenshot_2025-02-18_173015-removebg-preview.png" alt="Goal Image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="event-highlights-section">
+    <div class="event-highlights-container">
+        <h2 class="section-title">Event Highlights</h2>
+        <div class="highlight-list">
+            <ul>
+                <li><strong>Fun Games & Activities</strong>: Get ready for a thrilling experience with exciting games and activities for everyone.</li>
+                <li><strong>Delicious Food</strong>: A variety of scrumptious food options available throughout the event, from snacks to meals.</li>
+                <li><strong>Networking Opportunities</strong>: Meet like-minded creators, influencers, and entrepreneurs to build valuable connections.</li>
+                <li><strong>Collaboration Hub</strong>: A perfect space to discuss collaborations and brainstorm creative projects with others.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="join-meetup-section">
+    <h2 class="join-title">Join Mangalore's Biggest Creator Meetup!</h2>
+    <p class="join-description">
+        Are you looking to elevate your presence and connect with the leading influencers in Mangalore? Don’t miss the opportunity to collaborate and grow with the city's top digital influencers, creators, and entrepreneurs.
+    </p>
+    <p class="join-action">
+        <strong>Register your slots before it's gone!</strong>
+    </p>
+    <!-- Button linking to the form -->
+    <a href="https://forms.gle/KvcuhvG1EGitt7u98" target="_blank">
+        <button class="register-now-btn">Register Now</button>
+    </a>
+    <!-- Clickable phone number -->
+    <p class="contact-info">For further queries contact: <a href="tel:+919632781673"><strong>9632781673</strong></a></p>
+    
+    <!-- Design credit link -->
+    <p class="design-credit">Designed by <a href="https://geekbudsdesigns.com" target="_blank">GeekBudsDesigns.com</a></p>
+</div>
+
+
+
+
+
+
+
+
+    <script>
+   (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  // Set the target date and time for the countdown (February 23rd, Sunday at 3 PM)
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "02/23/",  // Set month to February
+      birthday = dayMonth + yyyy + " 15:00:00";  // 15:00:00 represents 3 PM
+  
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear + " 15:00:00";  // If the date has passed, set it for next year
+  }
+
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        // Do something when the countdown reaches zero
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "Registration Closed";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          document.getElementById("content").innerText = "Welcome to the Event!";
+          clearInterval(x);
+        }
+      }, 0);
+}());
+
+
+    </script>
+
+</body>
+</html>
