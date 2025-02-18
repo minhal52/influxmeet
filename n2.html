@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influx Utsav - Creators Meetup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@500&family=Smythe:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    /* General Styles for Body and HTML */
+    html, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        font-family: 'Arial', sans-serif;
+        background-color: #fff;
+    }
+    
+    
+    
+    /* Fix for Vertical and Horizontal Overflow */
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        background: url('assets/img/bg.png') no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-logo {
+        width: 490px;
+        transition: width 0.3s ease-in-out;
+        margin-top: 10px;
+        z-index: 2;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero-main-heading {
+        font-family: 'Smythe', serif;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: white;
+        text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.1);
+        animation: fadeIn 2s ease-in-out;
+        margin-top: -50px;
+        margin-bottom: 15px; /* Adjust space between heading and tagline */
+    }
+    
+    .hero-tagline {
+        font-size: 20px;
+        margin: 15px 0;
+        font-weight: 500;
+        color: white;
+        animation: fadeIn 3s ease-in-out;
+    }
+    
+    .hero-tagline a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    
+    .hero-tagline a:hover {
+        text-decoration: underline;
+    }
+    
+    .hero-register-btn {
+        background-color: #f7eb59;
+        padding: 15px 30px;  /* Increased padding for a larger button */
+        border-radius: 10px;
+        font-size: 22px;  /* Increased font size */
+        color: #333;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background-color 0.3s ease;
+        z-index: 2;
+    }
+    
+    .hero-register-btn:hover {
+        background-color: transparent;
+        border: 2px solid white;
+        color: #f7eb59;
+        font-weight: bold;
+    }
+    
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-logo {
+            width: 550px;
+            margin-top: 100px;
+        }
+    
+        .hero-main-heading {
+            font-size: 28px;
+            margin-top: -20px;
+        }
+    
+        .hero-tagline {
+            font-size: 16px;
+        }
+    
+        .hero-content {
+            padding: 0 20px;
+        }
+    
+        .hero-register-btn {
+            font-size: 16px;
+            padding: 8px 16px;
+        }
+    
+        .hero-section {
+            height: 100vh;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-logo {
+            width: 200px;
+        }
+    
+        .hero-main-heading {
+            font-size: 24px;
+        }
+    
+        .hero-tagline {
+            font-size: 14px;
+        }
+    
+        .hero-register-btn {
+            font-size: 14px;
+            padding: 6px 12px;
+        }
+    }
+    
+    /* Container Styling */
+    .countdown-container {
+      color: white;
+      margin: 0 auto;
+      text-align: center;
+      position: relative; /* Add relative positioning */
+      z-index: 10; /* Ensure it appears on top */
+      /* padding: 2rem;  Added padding for better spacing */
+    }
+    
+    /* Header Styling */
+    #headline {
+      color: white;  /* Set header color to white */
+      font-weight: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 18px; /* Added base font-size */
+      margin-bottom: 2px; /* Space below heading */
+    }
+    
+    /* List Item Styling */
+    #countdown li {
+      color: white;  /* Set list item color to white */
+      display: inline-block;
+      font-size: 1.5em;
+      list-style-type: none;
+      padding: 1em;
+      text-transform: uppercase;
+      margin: 0 10px; /* Added margin for spacing between items */
+      position: relative; /* Add relative positioning */
+      z-index: 10; /* Ensure it appears on top */
+    }
+    
+    /* Countdown Span Styling */
+    #countdown li span {
+      color: white;  /* Set countdown number color to white */
+      display: block;
+      font-size: 4.5rem;
+      font-weight: bold; /* Bold text for better readability */
+    }
+    
+   /* Responsive Design */
+@media all and (max-width: 768px) {
+    /* Adjust header font size */
+    #headline {
+      font-size: calc(0.875rem * var(--smaller, 1)); /* Smaller font size */
+    }
+  
+    /* Adjust list item font size */
+    #countdown li {
+      font-size: calc(1rem * var(--smaller, 1)); /* Further reduced font size */
+    }
+  
+    /* Adjust countdown number size */
+    #countdown li span {
+      font-size: calc(2.5rem * var(--smaller, 1)); /* Smaller countdown numbers */
+    }
+  
+    /* Adjust padding and layout */
+    .countdown-container {
+      padding: 0.5rem; /* Reduced padding on small screens */
+    }
+  }
+  
+  /* Extra small screen adjustments */
+  @media all and (max-width: 480px) {
+    #headline {
+      font-size: 1rem; /* Even smaller font size for very small screens */
+    }
+  
+    #countdown li {
+      font-size: 0.875rem; /* Even smaller font size for list items */
+    }
+  
+    #countdown li span {
+      font-size: 2.25rem; /* Further reduced countdown numbers */
+    }
+  }
+  
+
+/* About Section Styling */
+.about-section {
+    padding: 40px 20px; /* Reduced padding */
+    background-color: black;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Reduced gap */
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px; /* Reduced image size */
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 32px; /* Slightly smaller title */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f7eb59;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+.about-description {
+    font-size: 16px; /* Reduced font size */
+    font-weight: 500;
+    line-height: 1.6; /* Adjusted line height */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-title {
+        font-size: 28px; /* Reduced font size for smaller screens */
+    }
+
+    .about-description {
+        font-size: 14px; /* Reduced font size */
+    }
+}
+
+/* Our Goal Section Styling */
+.our-goal-section {
+    padding: 40px 20px; /* Reduced padding */
+    background-color: black;
+    text-align: center;
+}
+
+.our-goal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.our-goal-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Reduced gap */
+}
+
+.our-goal-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.our-goal-image img {
+    width: 100%;
+    max-width: 400px; /* Reduced image size */
+    height: auto;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 32px; /* Slightly smaller title */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f7eb59;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+.goal-description {
+    font-size: 16px; /* Reduced font size */
+    font-weight: 500;
+    line-height: 1.6; /* Adjusted line height */
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .our-goal-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .our-goal-image img {
+        max-width: 100%;
+        margin-bottom: 15px; /* Reduced margin */
+    }
+
+    .section-title {
+        font-size: 28px; /* Reduced font size for smaller screens */
+    }
+
+    .goal-description {
+        font-size: 14px; /* Reduced font size */
+    }
+}
+
+/* Event Highlights Section */
+.event-highlights-section {
+    background-image: url('assets/img/bg2.jpg'); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    color: white; /* Adjust text color as needed */
+}
+
+.event-highlights-section {
+    position: relative; /* Needed to position the overlay correctly */
+    padding: 50px 0;
+    color: white; /* Adjust text color as needed */
+}
+
+.event-highlights-section::before {
+    content: ''; /* Ensures the pseudo-element is rendered */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    z-index: 1; /* Places the overlay below the content */
+}
+
+.event-highlights-section .event-highlights-container {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2; /* Brings the content above the overlay */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.event-highlights-section {
+    background-image: url('assets/img/bg2.jpg'); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.highlight-list ul li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.highlight-list ul li strong {
+    font-weight: bold;
+}
+
+/* Join Meetup Section */
+.join-meetup-section {
+    background-color: black;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.join-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #f7eb59;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.join-description {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.join-action {
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.register-now-btn {
+    background-color: #f7eb59;
+    color: #333;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.register-now-btn:hover {
+    background-color: #d9c43b;
+}
+
+.contact-info {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Design credit link */
+.design-credit {
+    font-size: 14px;
+    color: #d3d3d3; /* Light color for the text */
+    margin-top: 20px;
+}
+
+.design-credit a {
+    text-decoration: none;
+    color: grey; /* Highlight color for the link */
+    font-weight: 600;
+}
+
+.design-credit a:hover {
+    color: grey; /* Hover effect color */
+}
+
+/* Responsive Design for the sections */
+@media (max-width: 768px) {
+    .join-title {
+        font-size: 28px; /* Reduced font size */
+    }
+
+    .join-description {
+        font-size: 16px; /* Reduced font size */
+    }
+
+    .join-action {
+        font-size: 18px; /* Reduced font size */
+    }
+
+    .register-now-btn {
+        font-size: 16px; /* Reduced button font size */
+    }
+
+    .section-title {
+        font-size: 24px; /* Adjusted for smaller screens */
+    }
+
+    .highlight-list ul li {
+        font-size: 1rem; /* Reduced font size for better readability */
+    }
+}
+
+    </style>
+</head>
+<body>
+   <!-- Hero Section -->
+<section class="hero-section">
+    <img src="assets/img/Untitled (100 x 50 px).png" alt="Influx Utsav Logo" class="hero-logo">
+    <div class="hero-content">
+        <h1 class="hero-main-heading">Mangalore’s Biggest and First Ever Influencer's Meetup</h1>
+        <p class="hero-tagline">Powered by <a href="https://www.instagram.com/mangalore.story" target="_blank" rel="noopener noreferrer">@mangalore.story</a></p>
+</div>
+  <!-- Countdown Section -->
+  <div class="countdown-container">
+
+    <div id="countdown">
+        <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+        </ul>
+        <h1 id="headline">Secure your Spots NOW - Limited slots available!!!</h1>
+    </div>
+    
+</div>
+    <!-- Register Now Button -->
+    <a href="https://forms.gle/KvcuhvG1EGitt7u98" class="hero-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="about-container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="assets/img/logo.png" alt="Event Image">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">About The Event</h2>
+                <p class="about-description">
+                    We are bringing together Mangalore’s top influencers, creators, and digital entrepreneurs for the biggest and first-ever influencer meetup in the city! Our mission is to build a thriving creator community, foster collaborations, and provide opportunities for influencers to grow and expand their reach. Whether you're a content creator or a digital entrepreneur, this is the perfect opportunity to network, collaborate, and elevate your presence in the digital world.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <script>
+   (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  // Set the target date and time for the countdown (February 23rd, Sunday at 3 PM)
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "02/23/",  // Set month to February
+      birthday = dayMonth + yyyy + " 15:00:00";  // 15:00:00 represents 3 PM
+  
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear + " 15:00:00";  // If the date has passed, set it for next year
+  }
+
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        // Do something when the countdown reaches zero
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "Registration Closed";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          document.getElementById("content").innerText = "Welcome to the Event!";
+          clearInterval(x);
+        }
+      }, 0);
+}());
+
+
+    </script>
+
+</body>
+</html>

@@ -3,187 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Influx Utsav - Creators Meetup</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@500&family=Smythe:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-  /* General Reset */
-  * {
+    <title>Influx Utsav</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<style>
+    /* General Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-    /* General Styles for Body and HTML */
-    html, body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        font-family: 'Arial', sans-serif;
-        background-color: #fff;
+
+body {
+    font-family: 'Comic Sans MS', sans-serif; /* Fun font */
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #000; /* Black background */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 6rem; /* Large title */
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Impact', sans-serif;
+    color: #FF00FF; /* Neon Purple color */
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.2), 0 0 30px rgba(255, 0, 255, 0.3);
+}
+
+.hero h2 {
+    font-size: 2.5rem; /* Subheading font size */
+    margin-bottom: 15px;
+    color:#ffcc00; /* Neon Green color */
+    font-family: 'Comic Sans MS', sans-serif;
+    text-shadow: 0 0 10px  rgba(255, 204, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    margin-bottom: 30px;
+    /* color: #ffcc00; Neon Yellow color */
+    /* text-shadow: 0 0 8px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.7); */
+}
+
+/* Call to Action Button */
+.cta-btn {
+    background-color: #ffcc00; /* Neon Yellow background color */
+    color: #222; /* Dark text color for better contrast */
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.7); /* Neon Yellow text shadow */
+    padding: 12px 30px;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.cta-btn:hover {
+    background-color: #ff6699; /* Slightly lighter background on hover */
+    cursor: pointer;
+}
+
+
+.cta-btn:hover {
+    background-color:black;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 5rem; /* Reduce title size on smaller screens */
     }
-    
-    
-    
-    /* Fix for Vertical and Horizontal Overflow */
-    *,
-    *::before,
-    *::after {
-        box-sizing: inherit;
+
+    .hero h2 {
+        font-size: 2rem; /* Reduce subheading size */
     }
-    
-    /* Hero Section */
-    .hero-section {
-        background: url('assets/img/bg.png') no-repeat center center/cover;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        position: relative;
-        overflow: hidden;
+
+    .hero p {
+        font-size: 1.2rem; /* Adjust paragraph size */
     }
-    
-    .hero-logo {
-        width: 490px;
-        transition: width 0.3s ease-in-out;
-        margin-top: 10px;
-        z-index: 2;
+
+    .cta-btn {
+        font-size: 1.5rem; /* Smaller button font size */
+        padding: 10px 25px; /* Smaller button padding */
     }
-    
-    .hero-content {
-        max-width: 800px;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 4rem; /* Further reduce title size for mobile */
     }
-    
-    .hero-main-heading {
-        font-family: 'Smythe', serif;
-        font-size: 36px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        color: white;
-        text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.1);
-        animation: fadeIn 2s ease-in-out;
-        margin-top: -50px;
-        margin-bottom: 15px; /* Adjust space between heading and tagline */
+
+    .hero h2 {
+        font-size: 1.8rem; /* Further reduce subheading size */
     }
-    
-    .hero-tagline {
-        font-size: 20px;
-        margin: 15px 0;
-        font-weight: 500;
-        color: white;
-        animation: fadeIn 3s ease-in-out;
+
+    .hero p {
+        font-size: 1.1rem; /* Further adjust paragraph size */
     }
-    
-    .hero-tagline a {
-        color: white;
-        text-decoration: none;
-        font-weight: 700;
+
+    .cta-btn {
+        font-size: 1.4rem; /* Further reduce button font size */
+        padding: 8px 20px; /* Further reduce button padding */
     }
-    
-    .hero-tagline a:hover {
-        text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 3rem; /* Reduce title size even more for very small screens */
     }
-    
-    .hero-register-btn {
-        background-color: #f7eb59;
-        padding: 15px 30px;  /* Increased padding for a larger button */
-        border-radius: 10px;
-        font-size: 22px;  /* Increased font size */
-        color: #333;
-        text-decoration: none;
-        font-weight: 700;
-        transition: background-color 0.3s ease;
-        z-index: 2;
+
+    .hero h2 {
+        font-size: 1.5rem; /* Adjust subheading size */
     }
-    
-    .hero-register-btn:hover {
-        background-color: transparent;
-        border: 2px solid white;
-        color: #f7eb59;
-        font-weight: bold;
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph size */
     }
-    
-    .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
+
+    .cta-btn {
+        font-size: 1.2rem; /* Smaller button font size */
+        padding: 8px 15px; /* Smaller button padding */
     }
-    
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .hero-logo {
-            width: 550px;
-            margin-top: 100px;
-        }
-    
-        .hero-main-heading {
-            font-size: 28px;
-            margin-top: -20px;
-        }
-    
-        .hero-tagline {
-            font-size: 16px;
-        }
-    
-        .hero-content {
-            padding: 0 20px;
-        }
-    
-        .hero-register-btn {
-            font-size: 16px;
-            padding: 8px 16px;
-        }
-    
-        .hero-section {
-            height: 100vh;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .hero-logo {
-            width: 200px;
-        }
-    
-        .hero-main-heading {
-            font-size: 24px;
-        }
-    
-        .hero-tagline {
-            font-size: 14px;
-        }
-    
-        .hero-register-btn {
-            font-size: 14px;
-            padding: 6px 12px;
-        }
-    }
-    
-    /* Container Styling */
-    .countdown-container {
+}
+ /* Container Styling */
+ .countdown-container {
       color: white;
       margin: 0 auto;
       text-align: center;
@@ -199,7 +164,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       font-size: 18px; /* Added base font-size */
-      margin-bottom: 2px; /* Space below heading */
+      margin-bottom: 20px; /* Space below heading */
     }
     
     /* List Item Styling */
@@ -217,7 +182,7 @@
     
     /* Countdown Span Styling */
     #countdown li span {
-      color: white;  /* Set countdown number color to white */
+      color: teal;  /* Set countdown number color to white */
       display: block;
       font-size: 4.5rem;
       font-weight: bold; /* Bold text for better readability */
@@ -261,317 +226,303 @@
     }
   }
   
-
-/* About Section Styling */
-.about-section {
-    padding: 40px 20px; /* Reduced padding */
-    background-color: black;
-    text-align: center;
-}
-
-.about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.about-content {
+/* General Styling for Location and Phone Section */
+.locations {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px; /* Reduced gap */
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 400px; /* Reduced image size */
-    height: auto;
-    border-radius: 8px;
-}
-
-.about-text {
-    max-width: 600px;
-    text-align: left;
-}
-
-.section-title {
-    font-size: 32px; /* Slightly smaller title */
-    font-weight: 700;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px; /* Reduced gap between cards */
+    flex-wrap: wrap;
     margin-bottom: 20px;
-    color: #f7eb59;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 1px;
 }
 
-.about-description {
-    font-size: 16px; /* Reduced font size */
-    font-weight: 500;
-    line-height: 1.6; /* Adjusted line height */
+/* Styling for Each Card */
+.location-card, .phone-card {
+    background-color: #000;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 220px; /* Adjusted width for better alignment */
+    text-align: center;
+    border: 2px solid #ffcc00;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .section-title {
-        font-size: 28px; /* Reduced font size for smaller screens */
-    }
-
-    .about-description {
-        font-size: 14px; /* Reduced font size */
-    }
+/* Hover Effect */
+.location-card:hover, .phone-card:hover {
+    transform: translateY(-5px);
 }
 
-/* Our Goal Section Styling */
-.our-goal-section {
-    padding: 40px 20px; /* Reduced padding */
-    background-color: black;
-    text-align: center;
+/* Funky Fonts */
+.location-card, .phone-card {
+    font-family: 'Roboto Mono', monospace;
 }
 
-.our-goal-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.our-goal-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px; /* Reduced gap */
-}
-
-.our-goal-text {
-    max-width: 600px;
-    text-align: left;
-}
-
-.our-goal-image img {
-    width: 100%;
-    max-width: 400px; /* Reduced image size */
-    height: auto;
-    border-radius: 8px;
-}
-
-.section-title {
-    font-size: 32px; /* Slightly smaller title */
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #f7eb59;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 1px;
-}
-
-.goal-description {
-    font-size: 16px; /* Reduced font size */
-    font-weight: 500;
-    line-height: 1.6; /* Adjusted line height */
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .our-goal-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .our-goal-image img {
-        max-width: 100%;
-        margin-bottom: 15px; /* Reduced margin */
-    }
-
-    .section-title {
-        font-size: 28px; /* Reduced font size for smaller screens */
-    }
-
-    .goal-description {
-        font-size: 14px; /* Reduced font size */
-    }
-}
-
-/* Event Highlights Section */
-.event-highlights-section {
-    background-image: url('assets/img/bg2.jpg'); /* Set your background image here */
-    background-size: cover;
-    background-position: center;
-    padding: 50px 0;
-    color: white; /* Adjust text color as needed */
-}
-
-.event-highlights-section {
-    position: relative; /* Needed to position the overlay correctly */
-    padding: 50px 0;
-    color: white; /* Adjust text color as needed */
-}
-
-.event-highlights-section::before {
-    content: ''; /* Ensures the pseudo-element is rendered */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
-    z-index: 1; /* Places the overlay below the content */
-}
-
-.event-highlights-section .event-highlights-container {
-    position: relative; /* Ensure content is above the overlay */
-    z-index: 2; /* Brings the content above the overlay */
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.event-highlights-section {
-    background-image: url('assets/img/bg2.jpg'); /* Set your background image here */
-    background-size: cover;
-    background-position: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.highlight-list ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.highlight-list ul li {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin: 10px 0;
-}
-
-.highlight-list ul li strong {
+/* Address and Phone Links Styling */
+.location-address a, .phone-number a {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Join Meetup Section */
-.join-meetup-section {
-    background-color: black;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Icon Styling */
+.location-icon, .phone-icon {
+    font-size: 2rem; /* Adjust icon size */
+    margin-bottom: 15px;
+    color:white; /* Icon color */
 }
 
-.join-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #f7eb59;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 20px;
-}
-
-.join-description {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.join-action {
-    font-size: 20px;
-    font-weight: 600;
-    color: red;
-    margin-bottom: 20px;
-}
-
-.register-now-btn {
-    background-color: #f7eb59;
-    color: #333;
-    padding: 12px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.register-now-btn:hover {
-    background-color: #d9c43b;
-}
-
-.contact-info {
-    font-size: 16px;
-    color: white;
-    font-weight: 600;
-}
-
-.contact-info a {
-    text-decoration: none;
+/* Hover Effect for Links */
+.location-address a:hover, .phone-number a:hover {
     color: white;
 }
 
-/* Design credit link */
-.design-credit {
-    font-size: 14px;
-    color: #d3d3d3; /* Light color for the text */
-    margin-top: 20px;
-}
-
-.design-credit a {
-    text-decoration: none;
-    color: grey; /* Highlight color for the link */
-    font-weight: 600;
-}
-
-.design-credit a:hover {
-    color: grey; /* Hover effect color */
-}
-
-/* Responsive Design for the sections */
+/* Responsive for smaller screens */
 @media (max-width: 768px) {
-    .join-title {
-        font-size: 28px; /* Reduced font size */
+    .location-card, .phone-card {
+        width: 180px; /* Smaller width for mobile */
+        padding: 12px 15px;
     }
 
-    .join-description {
-        font-size: 16px; /* Reduced font size */
-    }
-
-    .join-action {
-        font-size: 18px; /* Reduced font size */
-    }
-
-    .register-now-btn {
-        font-size: 16px; /* Reduced button font size */
-    }
-
-    .section-title {
-        font-size: 24px; /* Adjusted for smaller screens */
-    }
-
-    .highlight-list ul li {
-        font-size: 1rem; /* Reduced font size for better readability */
+    .location-address a, .phone-number a {
+        font-size: 0.9rem;
     }
 }
 
-    </style>
-</head>
+@media (max-width: 480px) {
+    .location-card, .phone-card {
+        width: 150px; /* Even smaller width on very small screens */
+        padding: 10px;
+    }
+
+    .location-address a, .phone-number a {
+        font-size: 0.8rem;
+    }
+}
+/* General Styling for the Section */
+section {
+  background-color: teal;
+  color: white;
+  font-family: helvetica;
+  text-transform: uppercase;
+  overflow: hidden; /* Prevent scrolling bar */
+}
+
+/* Styling for the container holding the text */
+section > .news {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 100%;
+}
+
+/* Styling for each scrolling message */
+.news-message {
+  display: flex;
+  flex-shrink: 0; /* Prevent shrinking */
+  height: 50px;
+  align-items: center;
+  animation: slide-left 20s linear infinite;
+}
+
+/* Styling for the paragraph text */
+.news-message p {
+  font-size: 2.5em;
+  font-weight: 100;
+  padding-left: 0.5em;
+}
+
+/* Animation for the scrolling effect */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* End position */
+  }
+}
+
+/* Mobile-specific Styles */
+@media only screen and (max-width: 768px) {
+  /* Reduce the font size for better readability on small screens */
+  .news-message p {
+    font-size: 1.5em; /* Decrease font size */
+  }
+
+  /* Make the container fit the screen width */
+  section > .news {
+    min-width: 100%;
+  }
+
+  /* Adjust the scrolling speed for mobile */
+  .news-message {
+    animation: slide-left 15s linear infinite; /* Faster scrolling for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Further reduce the font size for smaller screens */
+  .news-message p {
+    font-size: 1.2em; /* Even smaller font size for very small screens */
+  }
+
+  /* Adjust the scrolling speed even more for very small screens */
+  .news-message {
+    animation: slide-left 10s linear infinite; /* Even faster scrolling */
+  }
+}
+
+/* General Styling for Event Gallery */
+.event-gallery {
+    padding: 40px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+/* Funky Heading */
+.event-heading {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #ff3366;
+    text-transform: uppercase;
+}
+
+/* Event Cards Container */
+.event-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: stretch; /* Ensures cards are stretched equally */
+}
+
+/* Each Event Card */
+.event-card {
+    background-color: #ffcc00;
+    width: 250px; /* Slightly increased card width for better balance */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Fixed height for consistency */
+}
+
+/* Hover Effect */
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Funky Title */
+.event-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #ff3366;
+    /* margin-bottom: 15px; */
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Event Image Styling */
+.event-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures images fill the space without distortion */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+}
+
+/* Event Description */
+.event-description {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+    padding: 0 10px;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+        height: auto; /* Allow flexibility for small screens */
+    }
+
+    .event-description {
+        font-size: 0.9rem; /* Adjust description text size for small screens */
+    }
+}
+.registration {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.registration-heading {
+    font-size: 2.5rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffcc00;
+}
+
+.registration-subtext {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+
+.site-footer {
+    background-color: #111;
+    color: rgba(255, 255, 255, 0.6); /* Light text color */
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 1rem;
+    motion-path: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.8); /* Slightly brighter for contrast */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #ffcc00; /* Highlight on hover */
+}
+
+
+</style>
 <body>
-   <!-- Hero Section -->
-<section class="hero-section">
-    <img src="assets/img/Untitled (100 x 50 px).png" alt="Influx Utsav Logo" class="hero-logo">
+<!-- Hero Section -->
+<section class="hero">
     <div class="hero-content">
-        <h1 class="hero-main-heading">Mangalore’s Biggest and First Ever Influencer's Meetup</h1>
-        <p class="hero-tagline">Powered by <a href="https://www.instagram.com/mangalore.story" target="_blank" rel="noopener noreferrer">@mangalore.story</a></p>
-</div>
+        <!-- Replace the <h1> with an image -->
+        <img src="assets/img/Untitled (100 x 50 px).png" alt="Influx Utsav Logo" class="hero-logo">
+        <h2>Mangalore's Biggest & First Ever Influencer's Meetup</h2>
+        <p style="color: #ff3366;">by <a href="https://www.instagram.com/mangalore.story" target="_blank" style="color: #ff3366;">
+            <i class="fab fa-instagram"></i> @manglore.story
+        </a></p>
+    </div>
+    
   <!-- Countdown Section -->
   <div class="countdown-container">
 
@@ -583,131 +534,174 @@
             <li><span id="seconds"></span>Seconds</li>
         </ul>
         <h1 id="headline">Secure your Spots NOW - Limited slots available!!!</h1>
+        <a href="https://forms.gle/KvcuhvG1EGitt7u98" class="cta-btn" target="_blank">Register Now</a>
     </div>
     
 </div>
-    <!-- Register Now Button -->
-    <a href="https://forms.gle/KvcuhvG1EGitt7u98" class="hero-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
 </section>
-
-<!-- About Section -->
-<section id="about" class="about-section">
-    <div class="about-container">
-        <div class="about-content">
-            <div class="about-image">
-                <img src="assets/img/logo.png" alt="Event Image">
-            </div>
-            <div class="about-text">
-                <h2 class="section-title">About The Event</h2>
-                <p class="about-description">
-                    We are bringing together Mangalore’s top influencers, creators, and digital entrepreneurs for the biggest and first-ever influencer meetup in the city! Our mission is to build a thriving creator community, foster collaborations, and provide opportunities for influencers to grow and expand their reach. Whether you're a content creator or a digital entrepreneur, this is the perfect opportunity to network, collaborate, and elevate your presence in the digital world.
-                </p>
-            </div>
-        </div>
+<section>
+    <div class="news">
+      <section class=" scroll-section news-message">
+        <p>fun | games | felicitation | food | entertainment | networking | fun | games | felicitation | food | entertainment | networking |</p>
+      </section>
+      <section class="news-message">
+        <p>fun | games | felicitation | food | entertainment | networking | fun | games | felicitation | food | entertainment | networking |</p>
+      </section>
     </div>
-</section>
-<!-- Our Goal Section -->
-<section id="our-goal" class="our-goal-section">
-    <div class="our-goal-container">
-        <div class="our-goal-content">
-            <div class="our-goal-text">
-                <h2 class="section-title">What is Our Goal</h2>
-                <p class="goal-description">
-                    Our goal is to build a strong and vibrant influencer community in Mangalore, where creators, brands, and businesses can connect, collaborate, and grow together. We aim to empower digital creators by providing a platform for learning, networking, and unlocking new opportunities. This event is designed to celebrate Mangalore’s digital talent, foster meaningful partnerships, and open doors to exciting collaborations. By bringing influencers together, we strive to create a space where creativity thrives, ideas flourish, and success stories begin.
-                </p>
-            </div>
-            <div class="our-goal-image">
-                <img src="assets/img/Screenshot_2025-02-18_173015-removebg-preview.png" alt="Goal Image">
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="event-highlights-section">
-    <div class="event-highlights-container">
-        <h2 class="section-title">Event Highlights</h2>
-        <div class="highlight-list">
-            <ul>
-                <li><strong>Fun Games & Activities</strong>: Get ready for a thrilling experience with exciting games and activities for everyone.</li>
-                <li><strong>Delicious Food</strong>: A variety of scrumptious food options available throughout the event, from snacks to meals.</li>
-                <li><strong>Networking Opportunities</strong>: Meet like-minded creators, influencers, and entrepreneurs to build valuable connections.</li>
-                <li><strong>Collaboration Hub</strong>: A perfect space to discuss collaborations and brainstorm creative projects with others.</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="join-meetup-section">
-    <h2 class="join-title">Join Mangalore's Biggest Creator Meetup!</h2>
-    <p class="join-description">
-        Are you looking to elevate your presence and connect with the leading influencers in Mangalore? Don’t miss the opportunity to collaborate and grow with the city's top digital influencers, creators, and entrepreneurs.
-    </p>
-    <p class="join-action">
-        <strong>Register your slots before it's gone!</strong>
-    </p>
-    <!-- Button linking to the form -->
-    <a href="https://forms.gle/KvcuhvG1EGitt7u98" target="_blank">
-        <button class="register-now-btn">Register Now</button>
-    </a>
-    <!-- Clickable phone number -->
-    <p class="contact-info">For further queries contact: <a href="tel:+919632781673"><strong>9632781673</strong></a></p>
-    
-    <!-- Design credit link -->
-    <p class="design-credit">Designed by <a href="https://geekbudsdesigns.com" target="_blank">GeekBudsDesigns.com</a></p>
-</div>
-
-
-
-
-
-
-
-
-    <script>
-   (function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-  // Set the target date and time for the countdown (February 23rd, Sunday at 3 PM)
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "02/23/",  // Set month to February
-      birthday = dayMonth + yyyy + " 15:00:00";  // 15:00:00 represents 3 PM
+  </section>
   
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear + " 15:00:00";  // If the date has passed, set it for next year
-  }
 
-  const countDown = new Date(birthday).getTime(),
-      x = setInterval(function() {    
+  <section class="event-gallery">
+    <h2 class="event-heading">Our Amazing Events</h2>
+    <div class="event-cards">
+        <!-- Event Card 1 -->
+        <div class="event-card">
+            <img src="assets/img/food2.jpg" alt="Food">
+            <h3 class="event-title">Food</h3>
+            <p class="event-description">Delicious meals and snacks for every guest.</p>
+        </div>
 
-        const now = new Date().getTime(),
-              distance = countDown - now;
+        <!-- Event Card 2 -->
+        <div class="event-card">
+            <img src="assets/img/games2.jpg" alt="Fun Activities">
+            <h3 class="event-title">Fun Activities</h3>
+            <p class="event-description">Engaging games and fun activities for everyone.</p>
+        </div>
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        <!-- Event Card 3 -->
+        <div class="event-card">
+            <img src="assets/img/games.jpg" alt="Games">
+            <h3 class="event-title">Games</h3>
+            <p class="event-description">Interactive games for a memorable experience.</p>
+        </div>
+        <div class="event-card">
+            <img src="assets/img/netwrkng.jpg" alt="Networking">
+            <h3 class="event-title">Networking</h3>
+            <p class="event-description">Connect with like-minded professionals and build valuable relationships.</p>
+        </div>
+        
+    </div>
+</section>
 
-        // Do something when the countdown reaches zero
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "Registration Closed";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          document.getElementById("content").innerText = "Welcome to the Event!";
-          clearInterval(x);
-        }
-      }, 0);
-}());
+<section class="registration" id="register">
+    <h2 class="registration-heading">Join the Fun! 🎉</h2>
+    <p class="registration-subtext">Sign up now and be part of the excitement!</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdc7fvEmzSzdP83btk8w8-TYEyIaJIzAeVDtMQHpCGodjIMvA/viewform" 
+       target="_blank" class="cta-btn">Register Now</a>
+</section>
 
 
-    </script>
+<div class="locations">
+    <!-- Location Card -->
+    <div class="location-card">
+        <div class="location-icon">
+            <i class="fas fa-map-marker-alt"></i> <!-- Font Awesome location icon -->
+        </div>
+        <div class="location-address">
+            <a href="https://www.google.com/maps?q=Keianza+Garden,+Someshwara+Uchila,+Mangalore+575023" target="_blank">
+                Keianza Garden, Someshwara Uchila, Mangalore 575023
+            </a>
+        </div>
+    </div>
 
+    <!-- Phone Card -->
+    <div class="phone-card">
+        <div class="phone-icon">
+            <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+        </div>
+        <div class="phone-number">
+            <a href="tel:+919632781673">+91 9632781673</a>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+    <p>© 2024 All Rights Reserved | Designed & Developed by  
+        <a href="https://geekbudsdesigns.com" target="_blank">Geek Buds Design</a>
+    </p>
+</footer>
+
+
+<script>
+    (function () {
+   const second = 1000,
+         minute = second * 60,
+         hour = minute * 60,
+         day = hour * 24;
+ 
+   // Set the target date and time for the countdown (February 23rd, Sunday at 3 PM)
+   let today = new Date(),
+       dd = String(today.getDate()).padStart(2, "0"),
+       mm = String(today.getMonth() + 1).padStart(2, "0"),
+       yyyy = today.getFullYear(),
+       nextYear = yyyy + 1,
+       dayMonth = "02/23/",  // Set month to February
+       birthday = dayMonth + yyyy + " 15:00:00";  // 15:00:00 represents 3 PM
+   
+   today = mm + "/" + dd + "/" + yyyy;
+   if (today > birthday) {
+     birthday = dayMonth + nextYear + " 15:00:00";  // If the date has passed, set it for next year
+   }
+ 
+   const countDown = new Date(birthday).getTime(),
+       x = setInterval(function() {    
+ 
+         const now = new Date().getTime(),
+               distance = countDown - now;
+ 
+         document.getElementById("days").innerText = Math.floor(distance / (day)),
+         document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+         document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+         document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+ 
+         // Do something when the countdown reaches zero
+         if (distance < 0) {
+           document.getElementById("headline").innerText = "Registration Closed";
+           document.getElementById("countdown").style.display = "none";
+           document.getElementById("content").style.display = "block";
+           document.getElementById("content").innerText = "Welcome to the Event!";
+           clearInterval(x);
+         }
+       }, 0);
+ }());
+ 
+
+        // ScrollReveal Configuration
+        ScrollReveal().reveal('.hero h1', {
+            distance: '50px',
+            origin: 'bottom',
+            delay: 200,
+            duration: 1000
+        });
+
+        ScrollReveal().reveal('.hero h2', {
+            distance: '50px',
+            origin: 'bottom',
+            delay: 400,
+            duration: 1000
+        });
+
+        ScrollReveal().reveal('.hero p', {
+            distance: '50px',
+            origin: 'bottom',
+            delay: 600,
+            duration: 1000
+        });
+
+        ScrollReveal().reveal('.cta-btn', {
+            distance: '50px',
+            origin: 'bottom',
+            delay: 800,
+            duration: 1000
+        });
+
+        ScrollReveal().reveal('.event-card', {
+            distance: '100px',
+            origin: 'bottom',
+            delay: 400,
+            duration: 1000,
+            interval: 200
+        });
+  
+     </script>
 </body>
 </html>

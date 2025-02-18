@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funky Influencer Meetup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', sans-serif; /* Fun font */
+    background-color: #222;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #ff66cc, #ff99cc);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Impact', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #ff3366;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.cta-btn:hover {
+    background-color: #ff6699;
+    cursor: pointer;
+}
+
+/* Activities Section */
+.activities {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.activities h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff3366;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.activity-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.activity {
+    width: 250px;
+    text-align: center;
+    background-color: #ffcc00;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.activity:hover {
+    transform: scale(1.05);
+}
+
+.activity img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.activity h3 {
+    font-size: 1.8rem;
+    color: #ff3366;
+    margin: 10px 0;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.activity p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff3366;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Registration Section */
+.registration {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.registration input {
+    width: 60%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.registration button {
+    background-color: #ff3366;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.registration button:hover {
+    background-color: #ff6699;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ffcc00;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+</style>
+<body>
+
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Influx Utsav</h1>
+        <p>Mangalore's biggest & first-ever meetups, by Mangalore.story</p>
+        <p>Yes, we’re calling YOU. Food, games, memes, and chaos await!</p>
+        <a href="#register" class="cta-btn">Sign Up (If You Dare)</a>
+    </div>
+</section>
+
+
+<!-- Activities Section -->
+<section class="activities">
+    <h2>What’s Going Down?</h2>
+    <div class="activity-list">
+        <!--  -->
+        <div class="activity">
+            <img src="food.jpg" alt="Food">
+            <h3>Influencer-Approved Snacks</h3>
+            <p>Eat, post, repeat. Don’t forget the perfect shot.</p>
+        </div>
+        <div class="activity">
+            <img src="music.jpg" alt="Music">
+            <h3>DJ That Knows What’s Trending</h3>
+            <p>If it’s viral, we’re playing it!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Meme Gallery Section -->
+<section class="gallery">
+    <h2>Glam Photos (Not Just Selfies)</h2>
+    <div class="photo-grid">
+        <img src="photo1.jpg" alt="Funny Photo 1">
+        <img src="photo2.jpg" alt="Funny Photo 2">
+        <img src="photo3.jpg" alt="Funny Photo 3">
+        <img src="photo4.jpg" alt="Funny Photo 4">
+    </div>
+</section>
+
+<!-- Registration Section -->
+<section class="registration" id="register">
+    <h2>Ready to Join the Madness?</h2>
+    <form action="#">
+        <input type="email" placeholder="Your Email (For Meme Updates)" required>
+        <button type="submit" class="cta-btn">Sign Me Up (I’m Ready for Chaos!)</button>
+    </form>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 Funky Influencer Meetup | Follow us on <a href="#">Instagram</a> & <a href="#">TikTok</a></p>
+</footer>
+
+</body>
+</html>
