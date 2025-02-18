@@ -29,6 +29,17 @@ a {
     text-decoration: none;
     color: inherit;
 }
+.hero-logo {
+    width: 350px; /* Increase the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 150px; /* Adjust width for mobile screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
 
 /* Hero Section */
 .hero {
@@ -516,7 +527,7 @@ section > .news {
 <section class="hero">
     <div class="hero-content">
         <!-- Replace the <h1> with an image -->
-        <img src="assets/img/Untitled (100 x 50 px).png" alt="Influx Utsav Logo" class="hero-logo">
+        <img src="assets/img/Untitled (100 x 50 px) (1).png" alt="Influx Utsav Logo" class="hero-logo">
         <h2>Mangalore's Biggest & First Ever Influencer's Meetup</h2>
         <p style="color: #ff3366;">by <a href="https://www.instagram.com/mangalore.story" target="_blank" style="color: #ff3366;">
             <i class="fab fa-instagram"></i> @manglore.story
